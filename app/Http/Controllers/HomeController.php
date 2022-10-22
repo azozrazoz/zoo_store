@@ -12,7 +12,7 @@ class HomeController extends Controller
         ->orderBy('weight', 'ASC')
         ->get();
 
-        $items_list = Item::all();
+        $items_list = Item::all();        
 
         $tags = Tag::all()->where('slug', '!=', 'sale');
 
