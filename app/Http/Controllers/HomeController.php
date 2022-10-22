@@ -12,8 +12,8 @@ class HomeController extends Controller
         ->orderBy('weight', 'ASC')
         ->get();
 
-        $items_list = Item::all();
-        
+        $items_list = Item::all()->where('slug', '=', 'sale');
+
         $tags = Tag::all()->where('slug', '!=', 'sale');
 
         return view('main_page', compact('animals_list', 'items_list', 'tags'));
